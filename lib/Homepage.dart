@@ -1,10 +1,11 @@
-import 'package:estimatorapp/page2.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'variables.dart';
 import 'logic.dart';
 import 'nextPageButton.dart';
+
+
 
 class HomePage extends StatefulWidget {
   @override
@@ -13,7 +14,6 @@ class HomePage extends StatefulWidget {
 
 class HomePageState extends State<HomePage> {
   String dropdownvalue = "one";
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -52,3 +52,4 @@ class HomePageState extends State<HomePage> {
     );
   }
 }
+
