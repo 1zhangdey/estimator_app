@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'variables.dart';
 import 'logic.dart';
-import 'nextPageButton.dart';
-
+import 'package:get/get.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -45,7 +44,18 @@ class HomePageState extends State<HomePage> {
             }).toList(),
           ),
         ),
-        nextPageButton(pagenumber: page1,),
+        IconButton(
+          icon: Icon(
+            Icons.arrow_forward,
+            color: atlasPavingBlue,
+          ),
+          iconSize: 40,
+          onPressed: (){
+            setState((){
+              Get.to(page1());
+            });
+          },
+        ),
         SizedBox(
           width: double.infinity,
         ),
