@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'body.dart';
+import 'variables.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,8 +17,9 @@ class MyApp extends StatelessWidget {
               "Estimator Calculator",
             ),
           ),
-          backgroundColor: Color(0xFF2B45EC),
+          backgroundColor: atlasPavingBlue,
         ),
+        body: HomePage(),
       ),
     );
   }
