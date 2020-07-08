@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'variables.dart';
+import 'logic.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -23,6 +24,7 @@ class _HomePageState extends State<HomePage> {
             onChanged: (String newValue) {
               setState(() {
                 dropdownvalue = newValue;
+                Calulator(dropdownvalue);
               });
             },
             items: <String>['One', 'Two', 'Free', 'Four']
@@ -37,9 +39,13 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         SizedBox(
+          height: 100,
           width: double.infinity,
         ),
       ],
     );
   }
 }
+
+
+
