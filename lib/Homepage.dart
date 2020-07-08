@@ -17,7 +17,7 @@ class HomePageState extends State<HomePage> {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        DownForm(),
+        DownForm("option1","option2","option3"),
         IconButton(
           icon: Icon(
             Icons.arrow_forward,

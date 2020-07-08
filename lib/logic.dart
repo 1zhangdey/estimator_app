@@ -14,12 +14,17 @@ void Calulator(dropdownvalue){
 ///form
 
 class DownForm extends StatefulWidget {
+  DownForm(this.option1, this.option2,this.option3);
+  String option1;
+  String option2;
+  String option3;
+
   @override
   _DownFormState createState() => _DownFormState();
 }
 
 class _DownFormState extends State<DownForm> {
-  String dropdownvalue = "one";
+  String dropdownvalue;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,6 +33,10 @@ class _DownFormState extends State<DownForm> {
       child: DropdownButton<String>(
         isExpanded: true,
         value: dropdownvalue,
+        underline: Container(
+          color: atlasPavingBlue,
+          height: 3,
+        ),
         style: TextStyle(color: atlasPavingBlue, fontSize: 20),
         onChanged: (String newValue) {
           setState(() {
@@ -35,7 +44,7 @@ class _DownFormState extends State<DownForm> {
             Calulator(dropdownvalue);
           });
         },
-        items: <String>["one", "two", "three"]
+        items: <String>[widget.option1, widget.option2, widget.option3]
             .map<DropdownMenuItem<String>>((String value) {
           return DropdownMenuItem<String>(
             value: value,
