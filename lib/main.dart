@@ -1,3 +1,4 @@
+import 'package:estimatorapp/page2.dart';
 import 'package:flutter/material.dart';
 import 'body.dart';
 import 'variables.dart';
@@ -21,8 +22,9 @@ class MyApp extends StatelessWidget {
         ),
         body: HomePage(),
       ),
+      routes: <String, WidgetBuilder>{
+        'page2': (BuildContext context) => page2(),
+      },
     );
   }
 }
-
-

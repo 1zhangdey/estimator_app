@@ -1,14 +1,19 @@
+import 'package:estimatorapp/page2.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'variables.dart';
 import 'logic.dart';
+import 'nextPageButton.dart';
 
 class HomePage extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  HomePageState createState() => HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class HomePageState extends State<HomePage> {
+  String dropdownvalue = "one";
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -16,6 +21,7 @@ class _HomePageState extends State<HomePage> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
+          padding: EdgeInsets.only(bottom: 50),
           width: 200,
           child: DropdownButton<String>(
             isExpanded: true,
@@ -27,7 +33,7 @@ class _HomePageState extends State<HomePage> {
                 Calulator(dropdownvalue);
               });
             },
-            items: <String>['One', 'Two', 'Free', 'Four']
+            items: <String>["one", "two", "three"]
                 .map<DropdownMenuItem<String>>((String value) {
               return DropdownMenuItem<String>(
                 value: value,
@@ -38,14 +44,11 @@ class _HomePageState extends State<HomePage> {
             }).toList(),
           ),
         ),
+        nextPageButton(),
         SizedBox(
-          height: 100,
           width: double.infinity,
         ),
       ],
     );
   }
 }
-
-
-
