@@ -4,7 +4,8 @@ import 'variables.dart';
 
 
 class nextPageButton extends StatelessWidget {
-
+  nextPageButton({this.pagenumber});
+  var pagenumber;
   @override
   Widget build(BuildContext context) {
     return IconButton(
@@ -16,7 +17,7 @@ class nextPageButton extends StatelessWidget {
       onPressed: () => {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => page1()),
+          MaterialPageRoute(builder: (context) => pagenumber()),
         ),
       },
     );

@@ -1,3 +1,4 @@
+import 'package:estimatorapp/page1.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -44,7 +45,7 @@ class HomePageState extends State<HomePage> {
             }).toList(),
           ),
         ),
-        nextPageButton(),
+        nextPageButton(pagenumber: page1,),
         SizedBox(
           width: double.infinity,
         ),
