@@ -11,10 +11,20 @@ class asphaltrandr extends StatelessWidget {
         centerTitle: true,
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            child: TextField(
-
+          Center(
+            child: Container(
+              width: 300,
+              child: TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: atlasPavingBlue, width: 3),
+                    ),
+                    hintText: 'What is the surface area?'
+                ),
+              ),
             ),
           ),
         ],
