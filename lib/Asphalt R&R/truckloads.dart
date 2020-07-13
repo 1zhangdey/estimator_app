@@ -26,6 +26,7 @@ class truckloads extends StatelessWidget {
               child: Text((surfacearea*depth).toString(),
             ),
           ),
+          ),
         ],
       ),
     );
