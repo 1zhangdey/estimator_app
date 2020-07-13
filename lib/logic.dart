@@ -1,9 +1,9 @@
-import 'page1.dart';
+import 'Asphalt R&R.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'variables.dart';
-import 'logic.dart';
+
 
 
 
@@ -11,10 +11,8 @@ import 'logic.dart';
 ///form
 
 class DownForm extends StatefulWidget {
-  DownForm(this.option1, this.option2,this.option3);
-  String option1;
-  String option2;
-  String option3;
+  DownForm(this.items);
+  List items;
 
   @override
   _DownFormState createState() => _DownFormState();
@@ -26,14 +24,14 @@ class _DownFormState extends State<DownForm> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(bottom: 50),
-      width: 200,
+      width: 300,
       child: DropdownButton<String>(
         isExpanded: true,
         hint: Text("Pick One"),
         value: dropdownvalue,
         underline: Container(
           color: atlasPavingBlue,
-          height: 3,
+          height: 1,
         ),
         style: TextStyle(color: atlasPavingBlue, fontSize: 20),
         onChanged: (String newValue) {
@@ -41,7 +39,7 @@ class _DownFormState extends State<DownForm> {
             dropdownvalue = newValue;
           });
         },
-        items: <String>[widget.option1, widget.option2, widget.option3]
+        items: <String>[]
             .map<DropdownMenuItem<String>>((String value) {
           return DropdownMenuItem<String>(
             value: value,
