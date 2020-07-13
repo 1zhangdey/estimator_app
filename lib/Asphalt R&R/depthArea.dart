@@ -2,12 +2,10 @@ import 'package:estimatorapp/Asphalt%20R&R/truckloads.dart';
 import 'package:flutter/material.dart';
 import 'package:estimatorapp/variables.dart';
 
-
 class deptharea extends StatelessWidget {
   deptharea({this.surfacearea});
   int surfacearea;
   int depth;
-  double depthinmeters;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,10 +23,13 @@ class deptharea extends StatelessWidget {
               padding: EdgeInsets.only(bottom: 40),
               width: 300,
               child: TextField(
-                onSubmitted: (text){
-                depth = int.parse(text);
-                depthinmeters = depth*0.0254;
-                print(depthinmeters);
+                onSubmitted: (text1) {
+                  truckloads(
+                    surfacearea: surfacearea,
+                    depth: int.parse(text1),
+                  );
+                  print(surfacearea);
+                  print(depth);
                 },
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -39,14 +40,20 @@ class deptharea extends StatelessWidget {
             ),
           ),
           IconButton(
-              icon: Icon(Icons.arrow_forward),
-              color: atlasPavingBlue,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => truckloads(surfacearea: surfacearea,depth: depth,)),
-                );
-              })
+            icon: Icon(Icons.arrow_forward),
+            color: atlasPavingBlue,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => truckloads(
+                    depth: depth,
+                    surfacearea: surfacearea,
+                  ),
+                ),
+              );
+            },
+          ),
         ],
       ),
     );
