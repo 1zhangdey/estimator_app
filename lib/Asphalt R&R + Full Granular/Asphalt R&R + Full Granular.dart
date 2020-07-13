@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 
-class asphaltrandrplusfullgranular extends StatelessWidget {
+// ignore: camel_case_types
+class asphaltFullGranular extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
