@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'variables.dart';
+import 'Asphalt R&R + Full Granular.dart';
+import 'Concrete Curb + Sidewalk.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -20,7 +22,7 @@ class _DownFormState extends State<Homepage> {
           width: 300,
           child: DropdownButton<String>(
             isExpanded: true,
-            hint: Text("Pick One"),
+            hint: Text("What type of job is this?"),
             value: dropdownvalue,
             underline: Container(
               color: atlasPavingBlue,
@@ -28,9 +30,35 @@ class _DownFormState extends State<Homepage> {
             ),
             style: TextStyle(color: atlasPavingBlue, fontSize: 20),
             onChanged: (String newValue) {
-              setState(() {
-                dropdownvalue = newValue;
-              });
+               setState(() {
+                 dropdownvalue = newValue;
+                 switch(newValue){
+                   case "Asphalt R&R":
+                     Navigator.push(
+                       context,
+                       MaterialPageRoute(
+                         builder: (context) => asphaltrandr()
+                       ),
+                     );
+                     break;
+                   case "Asphalt R&R + Full Granular":
+                     Navigator.push(
+                       context,
+                       MaterialPageRoute(
+                           builder: (context) => asphaltrandrplusfullgranular()
+                       ),
+                     );
+                     break;
+                   case "Concrete Curb + Sidewalk":
+                     Navigator.push(
+                       context,
+                       MaterialPageRoute(
+                           builder: (context) => concreteCurbPlusSidewalk()
+                       ),
+                     );
+                     break;
+                 }
+               });
             },
             items: <String>[
               "Asphalt R&R",
@@ -46,21 +74,21 @@ class _DownFormState extends State<Homepage> {
             }).toList(),
           ),
         ),
-        IconButton(
-          icon: Icon(
-            Icons.arrow_forward,
-            color: atlasPavingBlue,
-          ),
-          iconSize: 40,
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => asphaltrandr(),
-              ),
-            );
-          },
-        ),
+//        IconButton(
+//          icon: Icon(
+//            Icons.arrow_forward,
+//            color: atlasPavingBlue,
+//          ),
+//          iconSize: 40,
+//          onPressed: ( ) {
+//            Navigator.push(
+//              context,
+//              MaterialPageRoute(
+//                builder: (context) => asphaltrandr(),
+//              ),
+//            );
+//          },
+//        ),
       ],
     );
   }
