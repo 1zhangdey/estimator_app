@@ -5,9 +5,6 @@ import 'package:flutter/rendering.dart';
 import 'variables.dart';
 import 'logic.dart';
 
-void Calulator(dropdownvalue){
-  print(dropdownvalue);
-}
 
 
 
@@ -42,7 +39,6 @@ class _DownFormState extends State<DownForm> {
         onChanged: (String newValue) {
           setState(() {
             dropdownvalue = newValue;
-            Calulator(dropdownvalue);
           });
         },
         items: <String>[widget.option1, widget.option2, widget.option3]
