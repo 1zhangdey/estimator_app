@@ -1,7 +1,5 @@
-import 'package:estimatorapp/Asphalt R&R.dart';
 import 'package:flutter/material.dart';
-import 'Homepage.dart';
-import 'variables.dart';
+import '../variables.dart';
 import 'Dropdownfield1.dart';
 
 void main() {
@@ -21,7 +19,16 @@ class MyApp extends StatelessWidget {
           ),
           backgroundColor: atlasPavingBlue,
         ),
-        body: HomePage(),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Homepage(),
+            SizedBox(
+              width: double.infinity,
+            ),
+          ],
+        ),
       ),
     );
   }
