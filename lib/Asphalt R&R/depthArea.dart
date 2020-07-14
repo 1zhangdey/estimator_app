@@ -18,7 +18,7 @@ class deptharea extends StatelessWidget {
             border: OutlineInputBorder(
               borderSide: BorderSide(color: atlasPavingBlue, width: 3),
             ),
-            hintText: 'What is the depth?'),
+            hintText: 'Asphalt Depth (inches)'),
       ),
       onPressed: () {
         Navigator.push(

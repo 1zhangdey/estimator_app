@@ -17,7 +17,7 @@ class asphaltrandr extends StatelessWidget {
             border: OutlineInputBorder(
               borderSide: BorderSide(color: atlasPavingBlue, width: 3),
             ),
-            hintText: 'What is the surface area?'),
+            hintText: 'Surface Area (m²)'),
       ),
       onPressed: () {
         Navigator.push(

@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'variables.dart';
 
 class pageBuilder extends StatelessWidget {
-  pageBuilder({this.widget,this.onPressed});
+  pageBuilder({this.widget, this.onPressed, this.units});
   Widget widget;
   final onPressed;
+  String units;
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +21,9 @@ class pageBuilder extends StatelessWidget {
         children: [
           Center(
             child: Container(
-              padding: EdgeInsets.only(bottom: 40),
-              width: 300,
-              child: widget
-            ),
+                padding: EdgeInsets.only(bottom: 40,right: 20),
+                width: 250,
+                child: widget),
           ),
           IconButton(
             icon: Icon(Icons.arrow_forward),

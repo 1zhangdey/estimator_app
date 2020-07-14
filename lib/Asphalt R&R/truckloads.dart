@@ -13,7 +13,8 @@ class truckloads extends StatelessWidget {
       widget: Center(
         child: Text(
           truckloadCalculator(depth, surfacearea) + " Truck Loads",
-          style: TextStyle(color: Colors.black,fontSize: 20),
+          style: TextStyle(color: Colors.black, fontSize: 20,)
+
         ),
       ),
       onPressed: () {
@@ -23,15 +24,10 @@ class truckloads extends StatelessWidget {
   }
 }
 
-
-
 String truckloadCalculator(depth, surface) {
   double numdepth = double.parse(depth) * 0.0254;
   double numsurface = double.parse(surface);
   double area = numdepth * numsurface;
-  double loads = area / 8;
-  return loads.toString(
-  );
+  int loads = (area / 8).ceil();
+  return loads.toString();
 }
-
-
