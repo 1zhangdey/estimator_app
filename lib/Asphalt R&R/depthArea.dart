@@ -4,8 +4,8 @@ import 'package:estimatorapp/variables.dart';
 
 class deptharea extends StatelessWidget {
   deptharea({this.surfacearea});
-  int surfacearea;
-  int depth;
+  String surfacearea;
+  String deapthArea_depth;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,13 +23,8 @@ class deptharea extends StatelessWidget {
               padding: EdgeInsets.only(bottom: 40),
               width: 300,
               child: TextField(
-                onSubmitted: (text1) {
-                  truckloads(
-                    surfacearea: surfacearea,
-                    depth: int.parse(text1),
-                  );
-                  print(surfacearea);
-                  print(depth);
+                onChanged: (text1) {
+                  deapthArea_depth = text1;
                 },
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -47,7 +42,7 @@ class deptharea extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) => truckloads(
-                    depth: depth,
+                    depth: deapthArea_depth,
                     surfacearea: surfacearea,
                   ),
                 ),

@@ -1,11 +1,9 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:estimatorapp/variables.dart';
 import 'depthArea.dart';
 
 class asphaltrandr extends StatelessWidget {
-  int surfacearea;
+  String surfacearea_surfacearea;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,11 +21,9 @@ class asphaltrandr extends StatelessWidget {
               padding: EdgeInsets.only(bottom: 40),
               width: 300,
               child: TextField(
-                onSubmitted: (text) {
-                  deptharea(
-                    surfacearea: int.parse(text),
-                  );
-                  print(text);
+                onChanged: (text) {
+                    surfacearea_surfacearea = text;
+                    print(surfacearea_surfacearea);
                 },
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -38,16 +34,18 @@ class asphaltrandr extends StatelessWidget {
             ),
           ),
           IconButton(
-              icon: Icon(Icons.arrow_forward),
-              color: atlasPavingBlue,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => deptharea(surfacearea: surfacearea),
-                  ),
-                );
-              })
+            icon: Icon(Icons.arrow_forward),
+            color: atlasPavingBlue,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      deptharea(surfacearea: surfacearea_surfacearea),
+                ),
+              );
+            },
+          )
         ],
       ),
     );

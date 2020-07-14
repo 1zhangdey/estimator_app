@@ -6,8 +6,8 @@ import "dart:math";
 
 class truckloads extends StatelessWidget {
   truckloads({this.depth, this.surfacearea});
-  int depth;
-  int surfacearea;
+  String depth;
+  String surfacearea;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class truckloads extends StatelessWidget {
               padding: EdgeInsets.only(bottom: 40),
               width: 300,
               child: Text(
-                depth.toString() + surfacearea.toString(),
+                depth + surfacearea,
               ),
             ),
           ),
