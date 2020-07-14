@@ -9,6 +9,7 @@ class asphaltrandr extends StatelessWidget {
   Widget build(BuildContext context) {
     return pageBuilder(
       widget: TextField(
+        keyboardType: TextInputType.number,
         onChanged: (text) {
           surfacearea_surfacearea = text;
           print(surfacearea_surfacearea);

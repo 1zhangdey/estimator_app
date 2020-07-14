@@ -11,6 +11,7 @@ class deptharea extends StatelessWidget {
   Widget build(BuildContext context) {
     return pageBuilder(
       widget: TextField(
+          keyboardType: TextInputType.number,
         onChanged: (text1) {
           deapthArea_depth = text1;
         },
