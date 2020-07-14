@@ -26,6 +26,9 @@ class truckloads extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.only(bottom: 40),
               width: 300,
+              child: Text(
+                truckloadCalculator(depth, surfacearea),
+              ),
             ),
           ),
           IconButton(
@@ -46,5 +49,5 @@ String truckloadCalculator(depth, surface) {
   double numsurface = double.parse(surface);
   double area = numdepth * numsurface;
   double loads = area / 8;
-  print(loads.round().toString()) ;
+  return loads.toString();
 }
