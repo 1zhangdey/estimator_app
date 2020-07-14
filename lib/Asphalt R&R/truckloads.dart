@@ -10,8 +10,11 @@ class truckloads extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return pageBuilder(
-      widget: Text(
-        truckloadCalculator(depth, surfacearea),
+      widget: Center(
+        child: Text(
+          truckloadCalculator(depth, surfacearea) + " Truck Loads",
+          style: TextStyle(color: Colors.black,fontSize: 20),
+        ),
       ),
       onPressed: () {
         truckloadCalculator(depth, surfacearea);
