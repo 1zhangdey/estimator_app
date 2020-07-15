@@ -1,9 +1,12 @@
+import 'package:estimatorapp/Asphalt%20R&R/paving/layerResults.dart';
 import 'package:estimatorapp/pageBuilder.dart';
 import 'package:flutter/material.dart';
 import 'package:estimatorapp/variables.dart';
 
 class pavingBase extends StatelessWidget {
-  int pavingbase;
+  pavingBase({this.pavingsurfaceb});
+  double pavingbase;
+  double pavingsurfaceb;
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +14,7 @@ class pavingBase extends StatelessWidget {
       widget: TextField(
         keyboardType: TextInputType.number,
         onChanged: (text) {
-          pavingbase = int.parse(text);
+          pavingbase = double.parse(text) *  0.0254;
         },
         decoration: InputDecoration(
             border: OutlineInputBorder(
@@ -23,9 +26,10 @@ class pavingBase extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) =>
-
-            ,
+            builder: (context) => layerResults(
+              pavingsurface: pavingsurfaceb,
+              pavingBase: pavingbase,
+            ),
           ),
         );
       },

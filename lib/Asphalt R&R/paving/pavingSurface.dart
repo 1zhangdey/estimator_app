@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:estimatorapp/variables.dart';
 
 class pavingSurface extends StatelessWidget {
-  int pavingsurface;
+  double pavingsurface;
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class pavingSurface extends StatelessWidget {
       widget: TextField(
         keyboardType: TextInputType.number,
         onChanged: (text) {
-          pavingsurface = int.parse(text);
+          pavingsurface = double.parse(text) * 0.0254;
         },
         decoration: InputDecoration(
             border: OutlineInputBorder(
@@ -24,7 +24,7 @@ class pavingSurface extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => pavingBase(),
+            builder: (context) => pavingBase(pavingsurfaceb: pavingsurface,),
           ),
         );
       },
