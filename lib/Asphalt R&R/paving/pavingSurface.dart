@@ -5,8 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:estimatorapp/variables.dart';
 
 class pavingSurface extends StatelessWidget {
-  double pavingsurface;
-
+  pavingSurface({this.loadsRemoved, this.surfaceArea});
+  double surfaceArea;
+  int loadsRemoved;
+  double pavingSurfacedepth;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class pavingSurface extends StatelessWidget {
       widget: TextField(
         keyboardType: TextInputType.number,
         onChanged: (text) {
-          pavingsurface = double.parse(text) * 0.0254;
+          pavingSurfacedepth = double.parse(text) * 0.0254;
         },
         decoration: InputDecoration(
             border: OutlineInputBorder(
@@ -23,11 +25,14 @@ class pavingSurface extends StatelessWidget {
             hintText: 'Surface Layer (inches)'),
       ),
       onPressed: () {
-        layerResults(pavingsurface: pavingsurface,);
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => pavingBase(),
+            builder: (context) => pavingBase(
+              surfaceArea: surfaceArea,
+              pavingSurfacedepth: pavingSurfacedepth,
+              loadsRemoved: loadsRemoved,
+            ),
           ),
         );
       },

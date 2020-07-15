@@ -7,22 +7,31 @@ class truckloads extends StatelessWidget {
 
   final String depth;
   final String surfacearea;
-
+  int loadsRemoved;
   @override
   Widget build(BuildContext context) {
     return pageBuilder(
       widget: Center(
         child: Text(
           truckloadCalculator(depth, surfacearea) + " Truck Loads",
-          style: TextStyle(color: Colors.black, fontSize: 20,)
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+          ),
         ),
       ),
       onPressed: () {
+        loadsRemoved = int.parse(
+          truckloadCalculator(depth, surfacearea),
+        );
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => pavingSurface(),
+            builder: (context) => pavingSurface(
+              loadsRemoved: loadsRemoved,
+              surfaceArea: double.parse(surfacearea),
             ),
+          ),
         );
       },
     );
