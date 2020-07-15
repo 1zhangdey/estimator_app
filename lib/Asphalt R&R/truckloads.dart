@@ -3,10 +3,8 @@ import 'package:estimatorapp/pageBuilder.dart';
 
 class truckloads extends StatelessWidget {
   truckloads({this.depth, this.surfacearea});
-
   final String depth;
   final String surfacearea;
-
   @override
   Widget build(BuildContext context) {
     return pageBuilder(
@@ -14,7 +12,6 @@ class truckloads extends StatelessWidget {
         child: Text(
           truckloadCalculator(depth, surfacearea) + " Truck Loads",
           style: TextStyle(color: Colors.black, fontSize: 20,)
-
         ),
       ),
       onPressed: () {
