@@ -14,7 +14,6 @@ class asphaltrandr extends StatelessWidget {
         keyboardType: TextInputType.number,
         onChanged: (text) {
           surfacearea_surfacearea = text;
-          print(surfacearea_surfacearea);
         },
         decoration: InputDecoration(
             border: OutlineInputBorder(
@@ -32,7 +31,9 @@ class asphaltrandr extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => deptharea(),
+            builder: (context) => deptharea(
+              surfaceArea: surfacearea_surfacearea,
+            ),
           ),
         );
       },
