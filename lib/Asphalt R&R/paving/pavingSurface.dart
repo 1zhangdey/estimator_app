@@ -1,3 +1,4 @@
+import 'package:estimatorapp/Asphalt%20R&R/paving/layerResults.dart';
 import 'package:estimatorapp/Asphalt%20R&R/paving/pavingBase.dart';
 import 'package:estimatorapp/pageBuilder.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +6,7 @@ import 'package:estimatorapp/variables.dart';
 
 class pavingSurface extends StatelessWidget {
   double pavingsurface;
+
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +23,11 @@ class pavingSurface extends StatelessWidget {
             hintText: 'Surface Layer (inches)'),
       ),
       onPressed: () {
+        layerResults(pavingsurface: pavingsurface,);
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => pavingBase(pavingsurfaceb: pavingsurface,),
+            builder: (context) => pavingBase(),
           ),
         );
       },

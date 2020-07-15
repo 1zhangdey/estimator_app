@@ -4,7 +4,6 @@ import 'package:estimatorapp/variables.dart';
 import 'package:estimatorapp/pageBuilder.dart';
 
 class deptharea extends StatelessWidget {
-  deptharea({this.surfacearea});
   String surfacearea;
   String deapthArea_depth;
   @override

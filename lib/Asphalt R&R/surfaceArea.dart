@@ -1,3 +1,5 @@
+import 'package:estimatorapp/Asphalt%20R&R/paving/layerResults.dart';
+import 'package:estimatorapp/Asphalt%20R&R/truckloads.dart';
 import 'package:flutter/material.dart';
 import 'package:estimatorapp/variables.dart';
 import 'depthArea.dart';
@@ -21,11 +23,16 @@ class asphaltrandr extends StatelessWidget {
             hintText: 'Surface Area (m²)'),
       ),
       onPressed: () {
+        layerResults(
+          surfaceArea: double.parse(surfacearea_surfacearea),
+        );
+        truckloads(
+          surfacearea: surfacearea_surfacearea,
+        );
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) =>
-                deptharea(surfacearea: surfacearea_surfacearea),
+            builder: (context) => deptharea(),
           ),
         );
       },

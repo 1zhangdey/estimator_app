@@ -4,9 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:estimatorapp/variables.dart';
 
 class pavingBase extends StatelessWidget {
-  pavingBase({this.pavingsurfaceb});
   double pavingbase;
-  double pavingsurfaceb;
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +21,11 @@ class pavingBase extends StatelessWidget {
             hintText: 'Base Layer (inches)'),
       ),
       onPressed: () {
+        layerResults(pavingBase: pavingbase,);
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => layerResults(
-              pavingsurface: pavingsurfaceb,
-              pavingBase: pavingbase,
             ),
           ),
         );
