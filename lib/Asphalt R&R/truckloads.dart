@@ -11,6 +11,7 @@ class truckloads extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return pageBuilder(
+      pageWidth: 300,
       widget: Center(
         child: Text(
           truckloadCalculator(depth, surfacearea) + " Truck Loads",

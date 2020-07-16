@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'variables.dart';
 
 class pageBuilder extends StatelessWidget {
-  pageBuilder({this.widget, this.onPressed, this.units});
+  pageBuilder({this.widget, this.onPressed,this.pageWidth});
   Widget widget;
   final onPressed;
-  String units;
+ double pageWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class pageBuilder extends StatelessWidget {
           Center(
             child: Container(
                 padding: EdgeInsets.only(bottom: 40,right: 20),
-                width: 250,
+                width: pageWidth,
                 child: widget),
           ),
           IconButton(

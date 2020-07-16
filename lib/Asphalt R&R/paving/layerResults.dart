@@ -15,6 +15,7 @@ class layerResults extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return pageBuilder(
+      pageWidth: double.infinity,
       widget: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -23,18 +24,32 @@ class layerResults extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Base Layer: " +
-                    ((pavingBase * surfaceArea * 2.45).ceil()).toString() +
-                    "tons",
+                "Asphalt Removed: " + loadsRemoved.toString() + " Loads",
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 20,
+                  fontSize: 25,
                 ),
               ),
             ],
           ),
           SizedBox(
-            width: double.infinity,
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Base Layer: " +
+                    ((pavingBase * surfaceArea * 2.45).ceil()).toString() +
+                    " tons",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 25,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
             height: 20,
           ),
           Row(
@@ -43,29 +58,33 @@ class layerResults extends StatelessWidget {
               Text(
                 "Surface Layer: " +
                     ((pavingsurface * surfaceArea * 2.45).ceil()).toString() +
-                    "tons",
+                    " tons",
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 20,
+                  fontSize: 25,
                 ),
               ),
             ],
           ),
           SizedBox(
-            width: double.infinity,
             height: 20,
           ),
-          Text(
-            "Total Paving; " +
-                (((pavingsurface * surfaceArea * 2.45) +
-                            (pavingBase * surfaceArea * 2.45))
-                        .ceil())
-                    .toString() +
-                "tons",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 20,
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Total Paving: " +
+                    (((pavingsurface * surfaceArea * 2.45) +
+                                (pavingBase * surfaceArea * 2.45))
+                            .ceil())
+                        .toString() +
+                    " tons",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 25,
+                ),
+              ),
+            ],
           ),
         ],
       ),

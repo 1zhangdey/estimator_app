@@ -10,6 +10,7 @@ class asphaltrandr extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return pageBuilder(
+      pageWidth: 300,
       widget: TextField(
         keyboardType: TextInputType.number,
         onChanged: (text) {
