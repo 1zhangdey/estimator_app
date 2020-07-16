@@ -22,10 +22,10 @@ class layerResults extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-
               Text(
-
-                "Base Layer: " + (pavingBase*surfaceArea*2.45).toString() + "tons",
+                "Base Layer: " +
+                    ((pavingBase * surfaceArea * 2.45).ceil()).toString() +
+                    "tons",
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 20,
@@ -41,7 +41,9 @@ class layerResults extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Surface Layer: " + (pavingsurface*surfaceArea*2.45).toString() + "tons",
+                "Surface Layer: " +
+                    ((pavingsurface * surfaceArea * 2.45).ceil()).toString() +
+                    "tons",
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 20,
@@ -52,6 +54,18 @@ class layerResults extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             height: 20,
+          ),
+          Text(
+            "Total Paving; " +
+                (((pavingsurface * surfaceArea * 2.45) +
+                            (pavingBase * surfaceArea * 2.45))
+                        .ceil())
+                    .toString() +
+                "tons",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 20,
+            ),
           ),
         ],
       ),
