@@ -1,22 +1,23 @@
-import 'package:estimatorapp/Asphalt%20R&R/prices/baseUnitPrice.dart';
-import 'package:estimatorapp/pageBuilder.dart';
 import 'package:flutter/material.dart';
+import 'package:estimatorapp/pageBuilder.dart';
 import 'package:estimatorapp/variables.dart';
 
-class surfacePavingUnitPrice extends StatefulWidget {
-  surfacePavingUnitPrice({
-    this.pavingSurfaceTons,
+class baseUnitPrice extends StatefulWidget {
+  baseUnitPrice({
+    this.pavingSurfaceTotalPrice,
     this.pavingBaseTons,
   });
-  int pavingSurfaceTons;
+
+  double pavingSurfaceTotalPrice;
   int pavingBaseTons;
-  double pavingSurfacePricePerTon;
-  double pavingSurfaceTotalPrice = 0;
+  double pavingBaseTotalPrice = 0;
+  double pavingBasePricePerTon;
+
   @override
-  _surfacePavingUnitPriceState createState() => _surfacePavingUnitPriceState();
+  _baseUnitPriceState createState() => _baseUnitPriceState();
 }
 
-class _surfacePavingUnitPriceState extends State<surfacePavingUnitPrice> {
+class _baseUnitPriceState extends State<baseUnitPrice> {
   @override
   Widget build(BuildContext context) {
     return pageBuilder(
@@ -45,7 +46,7 @@ class _surfacePavingUnitPriceState extends State<surfacePavingUnitPrice> {
               Expanded(
                 child: Center(
                   child: Text(
-                    widget.pavingSurfaceTons.toString() + " Tons",
+                    widget.pavingBaseTons.toString() + " Tons",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -54,11 +55,10 @@ class _surfacePavingUnitPriceState extends State<surfacePavingUnitPrice> {
                 child: TextField(
                   keyboardType: TextInputType.number,
                   onChanged: (text) {
-                    widget.pavingSurfacePricePerTon = double.parse(text);
+                    widget.pavingBasePricePerTon = double.parse(text);
                     setState(() {
-                      widget.pavingSurfaceTotalPrice =
-                          widget.pavingSurfacePricePerTon *
-                              widget.pavingSurfaceTons;
+                      widget.pavingBaseTotalPrice =
+                          widget.pavingBasePricePerTon * widget.pavingBaseTons;
                     });
                   },
                   decoration: InputDecoration(
@@ -79,7 +79,7 @@ class _surfacePavingUnitPriceState extends State<surfacePavingUnitPrice> {
             children: [
               Center(
                 child: Text(
-                  "\$ " + widget.pavingSurfaceTotalPrice.toString(),
+                  "\$ " + widget.pavingBaseTotalPrice.toString(),
                   style: TextStyle(fontSize: 30, decorationThickness: 4),
                 ),
               ),
@@ -87,17 +87,6 @@ class _surfacePavingUnitPriceState extends State<surfacePavingUnitPrice> {
           ),
         ],
       ),
-           onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => baseUnitPrice(
-                pavingSurfaceTotalPrice: widget.pavingSurfaceTotalPrice,
-                pavingBaseTons: widget.pavingBaseTons,
-              ),
-            ),
-          );
-        }
     );
   }
 }
