@@ -97,7 +97,6 @@ class layerResults extends StatelessWidget {
               builder: (context) => surfacePavingUnitPrice(
                 pavingSurfaceTons: (pavingsurface * surfaceArea * 2.45).ceil(),
                 loadsRemoved: loadsRemoved,
-                totalSurfaceArea: surfaceArea,
                 pavingBaseTons: (pavingsurface * surfaceArea * 2.45).ceil(),
               ),
             ),

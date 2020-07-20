@@ -2,19 +2,17 @@ import 'package:estimatorapp/pageBuilder.dart';
 import 'package:flutter/material.dart';
 import 'package:estimatorapp/variables.dart';
 
-
 class surfacePavingUnitPrice extends StatefulWidget {
-  surfacePavingUnitPrice(
-      {this.pavingSurfaceTons,
-      this.pavingBaseTons,
-      this.loadsRemoved,
-      this.totalSurfaceArea});
+  surfacePavingUnitPrice({
+    this.pavingSurfaceTons,
+    this.pavingBaseTons,
+    this.loadsRemoved,
+  });
   int pavingSurfaceTons;
-  double totalSurfaceArea;
   int pavingBaseTons;
   int loadsRemoved;
   double pavingSurfacePricePerTon;
-  double pavingSurfaceTotalPrice;
+  double pavingSurfaceTotalPrice = 0;
   @override
   _surfacePavingUnitPriceState createState() => _surfacePavingUnitPriceState();
 }
@@ -58,8 +56,11 @@ class _surfacePavingUnitPriceState extends State<surfacePavingUnitPrice> {
                   keyboardType: TextInputType.number,
                   onChanged: (text) {
                     widget.pavingSurfacePricePerTon = double.parse(text);
-                    widget.pavingSurfaceTotalPrice =
-                        widget.pavingSurfacePricePerTon * widget.totalSurfaceArea;
+                    setState(() {
+                      widget.pavingSurfaceTotalPrice =
+                          widget.pavingSurfacePricePerTon *
+                              widget.pavingSurfaceTons;
+                    });
                   },
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -71,14 +72,15 @@ class _surfacePavingUnitPriceState extends State<surfacePavingUnitPrice> {
             ],
           ),
           SizedBox(
-            height: 20,
+            height: 40,
           ),
+          Divider(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Center(
                 child: Text(
-                  widget.pavingSurfaceTotalPrice.toString(),
+                  "\$ " + widget.pavingSurfaceTotalPrice.toString(),
                   style: TextStyle(fontSize: 30, decorationThickness: 4),
                 ),
               ),
@@ -90,23 +92,20 @@ class _surfacePavingUnitPriceState extends State<surfacePavingUnitPrice> {
   }
 }
 
-
-
-
 //
 //
 //class surfacePavingUnitPrice extends StatelessWidget {
-  //  surfacePavingUnitPrice(
-  //      {this.pavingSurfaceTons,
-  //      this.pavingBaseTons,
-  //      this.loadsRemoved,
-  //      this.totalSurfaceArea});
-  //  int pavingSurfaceTons;
-  //  double totalSurfaceArea;
-  //  int pavingBaseTons;
-  //  int loadsRemoved;
-  //  double pavingSurfacePricePerTon;
-  //  double pavingSurfaceTotalPrice;
+//  surfacePavingUnitPrice(
+//      {this.pavingSurfaceTons,
+//      this.pavingBaseTons,
+//      this.loadsRemoved,
+//      this.totalSurfaceArea});
+//  int pavingSurfaceTons;
+//  double totalSurfaceArea;
+//  int pavingBaseTons;
+//  int loadsRemoved;
+//  double pavingSurfacePricePerTon;
+//  double pavingSurfaceTotalPrice;
 //
 //  @override
 //  Widget build(BuildContext context) {
