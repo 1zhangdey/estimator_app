@@ -1,7 +1,7 @@
 import 'package:estimatorapp/Asphalt%20R&R/prices/manAndTruckPowerPrice.dart';
 import 'package:flutter/material.dart';
-import '../variables.dart';
-import 'Dropdownfield1.dart';
+import 'variables.dart';
+import 'Home/Dropdownfield1.dart';
 
 void main() {
   runApp(MyApp());
