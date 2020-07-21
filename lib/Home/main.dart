@@ -20,17 +20,16 @@ class MyApp extends StatelessWidget {
           ),
           backgroundColor: atlasPavingBlue,
         ),
-        body: manAndTruckPowerPrice(),
-//        Column(
-//          mainAxisAlignment: MainAxisAlignment.center,
-//          crossAxisAlignment: CrossAxisAlignment.center,
-//          children: [
-//            manAndTruckPowerPrice(),
-//            SizedBox(
-//              width: double.infinity,
-//            ),
-//          ],
-//        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Homepage(),
+            SizedBox(
+              width: double.infinity,
+            ),
+          ],
+        ),
       ),
     );
   }
