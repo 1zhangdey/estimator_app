@@ -1,3 +1,4 @@
+import 'package:estimatorapp/Asphalt%20R&R/prices/manAndTruckPowerPrice.dart';
 import 'package:flutter/material.dart';
 import 'package:estimatorapp/pageBuilder.dart';
 import 'package:estimatorapp/variables.dart';
@@ -31,7 +32,7 @@ class _baseUnitPriceState extends State<baseUnitPrice> {
             children: [
               Center(
                 child: Text(
-                  "Surface Layer; Price Per Ton",
+                  "Base Layer; Price Per Ton",
                   style: TextStyle(fontSize: 25),
                 ),
               ),
@@ -87,6 +88,17 @@ class _baseUnitPriceState extends State<baseUnitPrice> {
           ),
         ],
       ),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => manAndTruckPowerPrice(
+                pavingSurfaceTotalPrice: widget.pavingSurfaceTotalPrice,
+                pavingBaseTotalPrice: widget.pavingBaseTotalPrice,
+              ),
+            ),
+          );
+        }
     );
   }
 }

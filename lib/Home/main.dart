@@ -1,3 +1,4 @@
+import 'package:estimatorapp/Asphalt%20R&R/prices/manAndTruckPowerPrice.dart';
 import 'package:flutter/material.dart';
 import '../variables.dart';
 import 'Dropdownfield1.dart';
@@ -19,16 +20,17 @@ class MyApp extends StatelessWidget {
           ),
           backgroundColor: atlasPavingBlue,
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Homepage(),
-            SizedBox(
-              width: double.infinity,
-            ),
-          ],
-        ),
+        body: manAndTruckPowerPrice(),
+//        Column(
+//          mainAxisAlignment: MainAxisAlignment.center,
+//          crossAxisAlignment: CrossAxisAlignment.center,
+//          children: [
+//            manAndTruckPowerPrice(),
+//            SizedBox(
+//              width: double.infinity,
+//            ),
+//          ],
+//        ),
       ),
     );
   }
