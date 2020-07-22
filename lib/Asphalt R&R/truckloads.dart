@@ -6,7 +6,7 @@ class truckloads extends StatelessWidget {
   truckloads({this.depth, this.surfacearea});
 
   final String depth;
-  final String surfacearea;
+  final double surfacearea;
   int loadsRemoved;
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class truckloads extends StatelessWidget {
           MaterialPageRoute(
             builder: (context) => pavingSurface(
               loadsRemoved: loadsRemoved,
-              surfaceArea: double.parse(surfacearea),
+              surfaceArea: surfacearea,
             ),
           ),
         );

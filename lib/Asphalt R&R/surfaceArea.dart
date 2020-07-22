@@ -6,7 +6,7 @@ import 'depthArea.dart';
 import 'package:estimatorapp/pageBuilder.dart';
 
 class asphaltrandr extends StatelessWidget {
-  String surfacearea_surfacearea;
+  double surfacearea;
   @override
   Widget build(BuildContext context) {
     return pageBuilder(
@@ -14,7 +14,7 @@ class asphaltrandr extends StatelessWidget {
       widget: TextField(
         keyboardType: TextInputType.number,
         onChanged: (text) {
-          surfacearea_surfacearea = text;
+          surfacearea = double.parse(text);
         },
         decoration: InputDecoration(
             border: OutlineInputBorder(
@@ -23,17 +23,11 @@ class asphaltrandr extends StatelessWidget {
             hintText: 'Surface Area (m²)'),
       ),
       onPressed: () {
-        layerResults(
-          surfaceArea: double.parse(surfacearea_surfacearea),
-        );
-        truckloads(
-          surfacearea: surfacearea_surfacearea,
-        );
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => deptharea(
-              surfaceArea: surfacearea_surfacearea,
+              surfaceArea: surfacearea,
             ),
           ),
         );
