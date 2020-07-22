@@ -1,12 +1,14 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:estimatorapp/Asphalt%20R&R/paving/pavingSurface.dart';
 import 'package:flutter/material.dart';
 import 'package:estimatorapp/pageBuilder.dart';
+
 
 class truckloads extends StatelessWidget {
   truckloads({this.depth, this.surfacearea});
 
   final String depth;
-  final double surfacearea;
+  double surfacearea;
   int loadsRemoved;
   @override
   Widget build(BuildContext context) {
