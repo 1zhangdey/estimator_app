@@ -5,7 +5,7 @@ import 'package:estimatorapp/pageBuilder.dart';
 
 class deptharea extends StatelessWidget {
   deptharea({this.surfaceArea});
-  int depth;
+  double depth;
   double surfaceArea;
   @override
   Widget build(BuildContext context) {
@@ -14,20 +14,20 @@ class deptharea extends StatelessWidget {
       widget: TextField(
         keyboardType: TextInputType.number,
         onChanged: (text1) {
-          depth = int.parse(text1);
+          depth = double.parse(text1);
         },
         decoration: InputDecoration(
             border: OutlineInputBorder(
               borderSide: BorderSide(color: atlasPavingBlue, width: 3),
             ),
-            hintText: 'Asphalt Depth (inches)'),
+            hintText: 'Asphalt Depth (mm)'),
       ),
       onPressed: () {
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => truckloads(
-              depth: depth.toString(),
+              depth: depth,
               surfacearea: surfaceArea,
             ),
           ),

@@ -6,8 +6,7 @@ import 'package:estimatorapp/pageBuilder.dart';
 
 class truckloads extends StatelessWidget {
   truckloads({this.depth, this.surfacearea});
-
-  final String depth;
+  double depth;
   double surfacearea;
   int loadsRemoved;
   @override
@@ -16,7 +15,7 @@ class truckloads extends StatelessWidget {
       pageWidth: 300,
       widget: Center(
         child: Text(
-          truckloadCalculator(depth, surfacearea) + " Truck Loads",
+          truckloadCalculator(depth, surfacearea).toString() + " Truck Loads",
           style: TextStyle(
             color: Colors.black,
             fontSize: 20,
@@ -42,9 +41,7 @@ class truckloads extends StatelessWidget {
 }
 
 String truckloadCalculator(depth, surface) {
-  double numdepth = double.parse(depth) * 0.0254;
-  double numsurface = double.parse(surface);
-  double area = numdepth * numsurface;
+  double area = (depth * 0.001) * surface;
   int loads = (area / 8).ceil();
   return loads.toString();
 }

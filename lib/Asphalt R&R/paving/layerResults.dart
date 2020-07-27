@@ -96,7 +96,7 @@ class layerResults extends StatelessWidget {
             MaterialPageRoute(
               builder: (context) => surfacePavingUnitPrice(
                 pavingSurfaceTons: (pavingsurface * surfaceArea * 2.45).ceil(),
-                pavingBaseTons: (pavingsurface * surfaceArea * 2.45).ceil(),
+                pavingBaseTons: (pavingBase * surfaceArea * 2.45).ceil(),
               ),
             ),
           );
