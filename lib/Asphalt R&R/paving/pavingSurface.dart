@@ -17,13 +17,13 @@ class pavingSurface extends StatelessWidget {
       widget: TextField(
         keyboardType: TextInputType.number,
         onChanged: (text) {
-          pavingSurfacedepth = double.parse(text) * 0.0254;
+          pavingSurfacedepth = double.parse(text) * 0.001;
         },
         decoration: InputDecoration(
             border: OutlineInputBorder(
               borderSide: BorderSide(color: atlasPavingBlue, width: 3),
             ),
-            hintText: 'Surface Layer (inches)'),
+            hintText: 'Surface Layer (mm)'),
       ),
       onPressed: () {
         Navigator.push(
