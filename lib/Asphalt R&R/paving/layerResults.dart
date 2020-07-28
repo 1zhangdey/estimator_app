@@ -16,6 +16,7 @@ class layerResults extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return pageBuilder(
+      appbar: "Paving",
         pageWidth: double.infinity,
         widget: Column(
           mainAxisAlignment: MainAxisAlignment.center,

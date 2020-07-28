@@ -10,6 +10,7 @@ class deptharea extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return pageBuilder(
+      appbar: "Removal",
       pageWidth: 300,
       widget: TextField(
         keyboardType: TextInputType.number,

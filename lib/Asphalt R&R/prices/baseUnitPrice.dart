@@ -23,6 +23,7 @@ class _baseUnitPriceState extends State<baseUnitPrice> {
   @override
   Widget build(BuildContext context) {
     return pageBuilder(
+      appbar: "Pricing",
       pageWidth: 600,
       widget: Column(
         mainAxisAlignment: MainAxisAlignment.center,

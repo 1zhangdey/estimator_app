@@ -11,6 +11,7 @@ class truckloads extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return pageBuilder(
+      appbar: "Removal",
       pageWidth: 300,
       widget: Center(
         child: Text(

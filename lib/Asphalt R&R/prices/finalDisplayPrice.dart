@@ -12,6 +12,7 @@ class finalPrice extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return pageBuilder(
+      appbar: "Pricing",
       pageWidth: double.infinity,
       widget: Column(
         mainAxisAlignment: MainAxisAlignment.center,

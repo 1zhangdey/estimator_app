@@ -13,11 +13,15 @@ class pavingSurface extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return pageBuilder(
+      appbar: "Paving",
       pageWidth: 300,
       widget: TextField(
         keyboardType: TextInputType.number,
         onChanged: (text) {
           pavingSurfacedepth = double.parse(text) * 0.001;
+          if (text = null) {
+            pavingSurfacedepth = 0;
+          }
         },
         decoration: InputDecoration(
             border: OutlineInputBorder(
