@@ -20,7 +20,7 @@ class finalPrice extends StatelessWidget {
           Text(
             "Total Price",
             style: TextStyle(
-              fontSize: 50,
+              fontSize: 40,
             ),
           ),
           Divider(
@@ -31,7 +31,7 @@ class finalPrice extends StatelessWidget {
                     pavingSurfaceTotalPrice +
                     pavingBaseTotalPrice)
                 .toString(),
-            style: TextStyle(fontSize: 80, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
           ),
         ],
       ),

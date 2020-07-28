@@ -1,4 +1,5 @@
-import 'package:estimatorapp/Asphalt%20R&R/prices/manAndTruckPowerPrice.dart';
+import 'file:///C:/Users/deyiz/AndroidStudioProjects/estimator_app1/lib/Asphalt%20R&R/prices/manpower/manAndTruckPowerPrice.dart';
+import 'package:estimatorapp/Asphalt%20R&R/prices/manpower/daysForJob.dart';
 import 'package:flutter/material.dart';
 import 'package:estimatorapp/pageBuilder.dart';
 import 'package:estimatorapp/variables.dart';
@@ -92,7 +93,7 @@ class _baseUnitPriceState extends State<baseUnitPrice> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => manAndTruckPowerPrice(
+              builder: (context) => daysForJob(
                 pavingSurfaceTotalPrice: widget.pavingSurfaceTotalPrice,
                 pavingBaseTotalPrice: widget.pavingBaseTotalPrice,
               ),

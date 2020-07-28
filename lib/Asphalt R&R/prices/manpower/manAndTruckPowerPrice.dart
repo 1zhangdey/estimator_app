@@ -1,11 +1,12 @@
 import 'package:estimatorapp/Asphalt%20R&R/prices/finalDisplayPrice.dart';
+import 'package:estimatorapp/Asphalt%20R&R/prices/manpower/daysForJob.dart';
 import 'package:estimatorapp/pageBuilder.dart';
 import 'package:flutter/material.dart';
 import 'package:estimatorapp/variables.dart';
 
 class manAndTruckPowerPrice extends StatefulWidget {
   manAndTruckPowerPrice(
-      {this.pavingSurfaceTotalPrice, this.pavingBaseTotalPrice});
+      {this.pavingSurfaceTotalPrice, this.pavingBaseTotalPrice,this.daysForJob});
   double pavingBaseTotalPrice;
   double pavingSurfaceTotalPrice;
   int numberOfMen;
@@ -13,6 +14,7 @@ class manAndTruckPowerPrice extends StatefulWidget {
   int numberOfTrucks;
   int numberOfTruckHours;
   int totalManPowerPrice = 0;
+  int daysForJob;
   @override
   _manAndTruckPowerPriceState createState() => _manAndTruckPowerPriceState();
 }
@@ -22,6 +24,7 @@ class _manAndTruckPowerPriceState extends State<manAndTruckPowerPrice> {
   Widget build(BuildContext context) {
     return pageBuilder(
         widget: SafeArea(
+          minimum: EdgeInsets.only(left: 50,right: 50),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
