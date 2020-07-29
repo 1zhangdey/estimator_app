@@ -47,8 +47,8 @@ android {
         applicationId "deyizhang.estimatorapp"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 2
-        versionName "2"
+        versionCode 3
+        versionName "3"
     }
 
 
