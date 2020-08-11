@@ -20,7 +20,7 @@ class _DownFormState extends State<Homepage> {
             image: DecorationImage(
               image: AssetImage("lib/images/background.jpg"),
               fit: BoxFit.cover,
-            ),
+           ),
           ),
       child: Column(
         children: [

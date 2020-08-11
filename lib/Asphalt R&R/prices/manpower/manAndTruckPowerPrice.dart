@@ -40,25 +40,25 @@ class _manAndTruckPowerPriceState extends State<manAndTruckPowerPrice> {
                   children: [
                     Text(
                       "# of Men",
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: 15),
                     ),
                     SizedBox(
                       height: 100,
                     ),
                     Text(
                       "# of Trucks",
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: 15),
                     ),
                   ],
                 ),
               ),
               Expanded(
-                flex: 1,
+                flex: 2,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(15.0),
+                      padding: const EdgeInsets.all(10.0),
                       child: TextField(
                         keyboardType: TextInputType.number,
                         onChanged: (text) {
@@ -76,7 +76,7 @@ class _manAndTruckPowerPriceState extends State<manAndTruckPowerPrice> {
                       height: 40,
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(15.0),
+                      padding: const EdgeInsets.all(10.0),
                       child: TextField(
                         keyboardType: TextInputType.number,
                         onChanged: (text) {
@@ -99,24 +99,25 @@ class _manAndTruckPowerPriceState extends State<manAndTruckPowerPrice> {
                   children: [
                     Text(
                       "Hours",
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: 15),
                     ),
                     SizedBox(
                       height: 100,
                     ),
                     Text(
                       "Hours",
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: 15),
                     ),
                   ],
                 ),
               ),
               Expanded(
+                flex: 2,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(15.0),
+                      padding: const EdgeInsets.all(10.0),
                       child: TextField(
                         keyboardType: TextInputType.number,
                         onChanged: (text) {
@@ -137,7 +138,7 @@ class _manAndTruckPowerPriceState extends State<manAndTruckPowerPrice> {
                       height: 40,
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(15.0),
+                      padding: const EdgeInsets.all(10.0),
                       child: TextField(
                         keyboardType: TextInputType.number,
                         onChanged: (text) {
