@@ -9,7 +9,7 @@ class manAndTruckPowerPrice extends StatefulWidget {
       {this.pavingSurfaceTotalPrice,
       this.pavingBaseTotalPrice,
       this.daysForJob,
-      bank });
+      totalManPowerPrice, bank});
   double pavingBaseTotalPrice;
   double pavingSurfaceTotalPrice;
   int numberOfMen = 0;
@@ -27,6 +27,7 @@ class _manAndTruckPowerPriceState extends State<manAndTruckPowerPrice> {
   static int bank = 1;
   Widget build(BuildContext context) {
     return pageBuilder(
+
         appbar: "Day " + bank.toString(),
         widget: SafeArea(
           minimum: EdgeInsets.only(left: 50, right: 50),
@@ -162,6 +163,7 @@ class _manAndTruckPowerPriceState extends State<manAndTruckPowerPrice> {
           ),
         ),
         onPressed: () {
+          print(widget.totalManPowerPrice);
           if (widget.daysForJob != 1) {
             widget.daysForJob -= 1;
             bank +=1;
@@ -173,6 +175,7 @@ class _manAndTruckPowerPriceState extends State<manAndTruckPowerPrice> {
                   pavingBaseTotalPrice: widget.pavingBaseTotalPrice,
                   daysForJob: widget.daysForJob,
                   bank: bank,
+                  totalManPowerPrice: widget.totalManPowerPrice,
                 ),
               ),
             );
@@ -183,7 +186,7 @@ class _manAndTruckPowerPriceState extends State<manAndTruckPowerPrice> {
                 builder: (context) => finalPrice(
                   pavingSurfaceTotalPrice: widget.pavingSurfaceTotalPrice,
                   pavingBaseTotalPrice: widget.pavingBaseTotalPrice,
-                  totalManPowerPrice: widget.totalManPowerPrice.roundToDouble(),
+                  totalManPowerPrice: widget.totalManPowerPrice.toDouble(),
                 ),
               ),
             );
