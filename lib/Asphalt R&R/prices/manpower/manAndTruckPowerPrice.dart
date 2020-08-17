@@ -16,7 +16,8 @@ class manAndTruckPowerPrice extends StatefulWidget {
   int numberOfManHours = 0;
   int numberOfTrucks = 0;
   int numberOfTruckHours = 0;
-  int totalManPowerPrice = 0;
+  int totalManPowerPriceForDay = 0;
+
   int daysForJob;
   @override
   _manAndTruckPowerPriceState createState() => _manAndTruckPowerPriceState();
@@ -27,7 +28,22 @@ class _manAndTruckPowerPriceState extends State<manAndTruckPowerPrice> {
   static int bank = 1;
   Widget build(BuildContext context) {
     return pageBuilder(
-
+      leading: IconButton(icon:Icon(Icons.backspace),
+        onPressed: (){
+        bank = 1;
+        widget.totalManPowerPriceForDay = 0;
+        widget.daysForJob = 0;
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => daysForJob(
+                pavingSurfaceTotalPrice: widget.pavingSurfaceTotalPrice,
+                pavingBaseTotalPrice: widget.pavingBaseTotalPrice,
+              ),
+            ),
+          );
+        },
+      ),
         appbar: "Day " + bank.toString(),
         widget: SafeArea(
           minimum: EdgeInsets.only(left: 50, right: 50),
@@ -123,7 +139,7 @@ class _manAndTruckPowerPriceState extends State<manAndTruckPowerPrice> {
                         keyboardType: TextInputType.number,
                         onChanged: (text) {
                           widget.numberOfManHours += int.parse(text);
-                          widget.totalManPowerPrice += widget.numberOfManHours *
+                          widget.totalManPowerPriceForDay += widget.numberOfManHours *
                               widget.numberOfMen *
                               100;
                         },
@@ -144,7 +160,7 @@ class _manAndTruckPowerPriceState extends State<manAndTruckPowerPrice> {
                         keyboardType: TextInputType.number,
                         onChanged: (text) {
                           widget.numberOfTruckHours += int.parse(text);
-                          widget.totalManPowerPrice += widget.numberOfTrucks *
+                          widget.totalManPowerPriceForDay += widget.numberOfTrucks *
                               widget.numberOfTruckHours *
                               100;
                         },
@@ -163,7 +179,7 @@ class _manAndTruckPowerPriceState extends State<manAndTruckPowerPrice> {
           ),
         ),
         onPressed: () {
-          print(widget.totalManPowerPrice);
+          print(widget.totalManPowerPriceForDay);
           if (widget.daysForJob != 1) {
             widget.daysForJob -= 1;
             bank +=1;
@@ -171,22 +187,23 @@ class _manAndTruckPowerPriceState extends State<manAndTruckPowerPrice> {
               context,
               MaterialPageRoute(
                 builder: (context) => manAndTruckPowerPrice(
-                  pavingSurfaceTotalPrice: widget.pavingSurfaceTotalPrice,
+                  pavingSurfaceTotalPrice: widget.pavingSurfaceTotalPrice + widget.totalManPowerPriceForDay,
                   pavingBaseTotalPrice: widget.pavingBaseTotalPrice,
                   daysForJob: widget.daysForJob,
                   bank: bank,
-                  totalManPowerPrice: widget.totalManPowerPrice,
+                  totalManPowerPrice: 0,
                 ),
               ),
             );
           } else {
+            print(widget.totalManPowerPriceForDay);
             Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => finalPrice(
-                  pavingSurfaceTotalPrice: widget.pavingSurfaceTotalPrice,
+                  pavingSurfaceTotalPrice: widget.pavingSurfaceTotalPrice + widget.totalManPowerPriceForDay,
                   pavingBaseTotalPrice: widget.pavingBaseTotalPrice,
-                  totalManPowerPrice: widget.totalManPowerPrice.toDouble(),
+                  totalManPowerPrice: widget.totalManPowerPriceForDay.toDouble(),
                 ),
               ),
             );

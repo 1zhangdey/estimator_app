@@ -2,15 +2,18 @@ import 'package:flutter/material.dart';
 import 'variables.dart';
 
 class pageBuilder extends StatelessWidget {
-  pageBuilder({this.widget, this.onPressed,this.pageWidth, this.appbar});
+  pageBuilder({this.widget, this.onPressed,this.pageWidth, this.appbar, leading});
   Widget widget;
   final onPressed;
  double pageWidth;
  String appbar;
+ var leading;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+        leading: leading,
         backgroundColor: atlasPavingBlue,
         title: Text(appbar),
         centerTitle: true,

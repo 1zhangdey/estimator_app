@@ -28,7 +28,7 @@ class finalPrice extends StatelessWidget {
             thickness: 5,
           ),
           Text(
-            (totalManPowerPrice +
+            (
                     pavingSurfaceTotalPrice +
                     pavingBaseTotalPrice)
                 .toString(),
