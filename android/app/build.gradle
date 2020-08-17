@@ -46,9 +46,9 @@ android {
         multiDexEnabled true
         applicationId "deyizhang.estimatorapp"
         minSdkVersion 16
-        targetSdkVersion 28
-        versionCode 4
-        versionName "4"
+        targetSdkVersion 29
+        versionCode 5
+        versionName "5"
     }
 
 

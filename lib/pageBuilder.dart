@@ -13,10 +13,6 @@ class pageBuilder extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        leading: leading,
-        backgroundColor: atlasPavingBlue,
-        title: Text(appbar),
-        centerTitle: true,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
